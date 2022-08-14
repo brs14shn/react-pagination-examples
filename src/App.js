@@ -6,6 +6,16 @@ function App() {
   const [posts,setPosts] =useState([])
   const [loading,setLoading ] =useState(false)
   const [currentPage,setCurrentPage] =useState(1)
+  const [postsPerPage,setPostsPerPage] =useState(10)
+  
+  const baseUrl=
+
+  useEffect=(()=>{
+    const FetchPosts=async()=>{
+      const res =await axios.get(baseUrl)
+    }
+
+  },[])
   return (
     <div className="App">
       <h1>Pagination</h1>
