@@ -1,6 +1,7 @@
 import './App.css';
 import axios from "axios"
 import {useState,useEffect} from "react"
+import Posts from './components/Posts';
 
 function App() {
   const [posts,setPosts] =useState([])
@@ -27,11 +28,9 @@ console.log(posts);
 
 
   return (
-    <div className="App">
-      <h1>Pagination</h1>
-      
-
-
+    <div className="container mt-5 text-center">
+      <h1 className='text-primary mb-3'>Pagination</h1>
+      <Posts posts={posts} loading={loading}/>
     </div>
   );
 }

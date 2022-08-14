@@ -1,8 +1,15 @@
 import React from 'react'
 
-const Posts = () => {
+const Posts = ({posts,loading}) => {
+    if(loading) {
+        return <h3>Loading ...</h3>
+    }
   return (
-    <div>Posts</div>
+    <ul className='list-group'>
+        {posts.map((post)=>(
+        <li className='list-group-item'>{post.title}</li>
+        ))}
+    </ul>
   )
 }
 
