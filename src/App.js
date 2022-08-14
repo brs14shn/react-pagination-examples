@@ -8,14 +8,24 @@ function App() {
   const [currentPage,setCurrentPage] =useState(1)
   const [postsPerPage,setPostsPerPage] =useState(10)
   
-  const baseUrl=
 
-  useEffect=(()=>{
-    const FetchPosts=async()=>{
-      const res =await axios.get(baseUrl)
-    }
+ useEffect(() => {
+  const fetchPosts=async()=>{
+    setLoading(true)
+    const res =await axios.get("https://jsonplaceholder.typicode.com/posts")
+    setPosts(res?.data)
+    setLoading(false)
+    
+  }
+  fetchPosts()
+ }, [])
 
-  },[])
+console.log(posts);
+
+
+ 
+
+
   return (
     <div className="App">
       <h1>Pagination</h1>
